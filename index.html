@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blockfall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Blockfall game">
+      <header class="topbar">
+        <div>
+          <h1>Blockfall</h1>
+          <p>Tetris-style arcade puzzle</p>
+        </div>
+        <div class="actions">
+          <button id="pause" type="button">Pause</button>
+          <button id="restart" type="button">Restart</button>
+        </div>
+      </header>
+
+      <section class="stage">
+        <aside class="panel stats" aria-label="Scoreboard">
+          <div>
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>Lines</span>
+            <strong id="lines">0</strong>
+          </div>
+          <div>
+            <span>Level</span>
+            <strong id="level">1</strong>
+          </div>
+        </aside>
+
+        <div class="board-wrap">
+          <canvas id="board" width="300" height="600" aria-label="Tetris board"></canvas>
+          <div id="message" class="message">
+            <h2>Ready</h2>
+            <p>Clear rows and keep the stack low.</p>
+            <button id="start" type="button">Start Game</button>
+          </div>
+        </div>
+
+        <aside class="panel previews" aria-label="Pieces">
+          <div>
+            <span>Next</span>
+            <canvas id="next" width="112" height="112" aria-label="Next piece"></canvas>
+          </div>
+          <div>
+            <span>Hold</span>
+            <canvas id="hold" width="112" height="112" aria-label="Held piece"></canvas>
+          </div>
+        </aside>
+      </section>
+
+      <section class="mobile-controls" aria-label="Touch controls">
+        <button data-action="left" type="button">Left</button>
+        <button data-action="rotate" type="button">Rotate</button>
+        <button data-action="right" type="button">Right</button>
+        <button data-action="down" type="button">Soft</button>
+        <button data-action="drop" type="button">Drop</button>
+        <button data-action="hold" type="button">Hold</button>
+      </section>
+
+      <footer class="help">
+        <span>Move: arrow keys or A/D</span>
+        <span>Rotate: W or Up</span>
+        <span>Soft drop: S or Down</span>
+        <span>Hard drop: Space</span>
+        <span>Hold: C</span>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
